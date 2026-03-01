@@ -7,17 +7,12 @@ export default function AddCharacterPage({ setCharacters }) {
   const [results, setResults] = useState([]);
 
   const searchRef = useRef(null);
-  const nameRef = useRef(null);
-  const speciesRef = useRef(null);
+  const notesRef = useRef(null);
   const statusRef = useRef(null);
   const ratingRef = useRef(null);
-  const notesRef = useRef(null);
-
-  const resultsRef = useRef(null);
-  const errorRef = useRef(null);
-  const imageRef = useRef(null);
+  const selectedRef = useRef(null);
   const timerRef = useRef(null);
-  const apiIdRef = useRef("");
+  const errorRef = useRef(null);
 
   useEffect(() => {
     searchRef.current.focus();
@@ -82,7 +77,7 @@ export default function AddCharacterPage({ setCharacters }) {
     <div className="page">
       <h1>Add Character</h1>
 
-      <div>
+      <div className="form-group">
         <label>Search Rick and Morty</label>
         <input ref={searchRef} placeholder="Search by character name..." />
       </div>
@@ -126,16 +121,20 @@ export default function AddCharacterPage({ setCharacters }) {
         </select>
       </div>
 
-      <div className="form-group" >
+      <div className="form-group">
         <label>Notes</label>
-        <textarea ref={notesRef} rows='3' placeholder="Your thoughts..." ></textarea>
+        <textarea
+          ref={notesRef}
+          rows="3"
+          placeholder="Your thoughts..."></textarea>
       </div>
 
-      <p ref={errorRef} style={{ display: 'none', color: 'red', marginBottom: '1rem'}} > 
-
-        <button onClick={()=> navigate('/')} >Cancel</button>
-        <button className="btn-primary" onClick={handleSave} >Save</button>
-      </p>
+      <p ref={errorRef} style={{ display: "none", color: "red", marginBottom: "1rem" }}/>
+      <button onClick={() => navigate("/")}>Cancel</button>
+      <button className="btn-primary" onClick={handleSave}>
+        Save
+      </button>
+    
     </div>
   );
 }

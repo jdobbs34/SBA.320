@@ -1,3 +1,4 @@
+/* Reset */
 body,
 html {
   margin: 0;
@@ -13,8 +14,9 @@ html {
   box-sizing: inherit;
 }
 
+/* Navbar */
 nav {
-  background-color: grey;
+  background-color: #333;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -36,11 +38,149 @@ nav a:hover {
   text-decoration: underline;
 }
 
+nav a.active {
+  text-decoration: underline;
+}
+
+/* Page Container */
+.page {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+/* Character card */
+.book-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  cursor: default;
+}
+
+.book-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.book-card h3 {
+  margin-bottom: 0.25rem;
+}
+
+.book-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Buttons */
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.btn-primary {
+  background-color: #333;
+  color: white;
+}
+
+.btn-danger {
+  background-color: #cc0000;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #555;
+}
+
+.btn-dange:hover {
+  background-color: #aa0000;
+}
+
+/* Filter tabs */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.filters button {
+  background: white;
+  border: 1px solid #ddd;
+}
+
+.filters button.active {
+  background: #333;
+  color: white;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Search results dropdown */
 .search-results {
   border: 1px solid #ddd;
   border-radius: 4px;
-  background: white;
+  background-color: white;
   margin-bottom: 1rem;
   max-height: 300px;
   overflow-y: auto;
+}
+
+.search-results .book-card {
+  border: none;
+  border-bottom: 1 solid #eee;
+  border-radius: 0;
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.search-results .book-card:hover {
+  background-color: #f5f5f5;
+}
+
+.search-results .book-card:last-child {
+  border-bottom: none;
+}
+
+.search-results img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
 }

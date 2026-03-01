@@ -27,9 +27,28 @@ function App() {
     <BrowserRouter>
       <Navbar />
       <Routes>
-        <Route path="/" element={<CharacterListPage characters={characters} setCharacters={setCharacters} />} />
-        <Route path="/add" element={<AddCharacterPage setCharacters={setCharacters} />} />
-        <Route path="/book/id" element={<CharacterDetailPage characters={characters} setCharacters={setCharacters} />} />
+        <Route
+          path="/"
+          element={
+            <CharacterListPage
+              characters={characters}
+              setCharacters={setCharacters}
+            />
+          }
+        />
+        <Route
+          path="/add"
+          element={<AddCharacterPage setCharacters={setCharacters} />}
+        />
+        <Route
+          path="/book/id"
+          element={
+            <CharacterDetailPage
+              characters={characters}
+              setCharacters={setCharacters}
+            />
+          }
+        />
         <Route path="/stats" element={<StatsPage characters={characters} />} />
       </Routes>
     </BrowserRouter>
