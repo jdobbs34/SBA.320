@@ -1,35 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import CharacterListPage from "./pages/CharacterListPage";
+import AddCharacterPage from "./pages/AddCharacterPage";
+import CharacterDetailPage from "./pages/CharacterDetailPage";
+import StatsPage from "./pages/StatsPage";
+// import "./App.css";
 
+// useState - hold the characters array
 function App() {
-  const [count, setCount] = useState(0)
+  const [characters, setCharacters] = useState(() => {
+    try {
+      const saved = localStorage.getItem("characters");
+      return saved ? JSON.parse(saved) : [];
+    } catch (error) {
+      return [];
+    }
+  });
+
+  // useEffect - save to localStorage whenever characters changes
+  useEffect(() => {
+    localStorage.setItem("characters", JSON.stringify(characters));
+  }, [characters]);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<CharacterListPage characters={characters} setCharacters={setCharacters} />} />
+        <Route path="/add" element={<AddCharacterPage setCharacters={setCharacters} />} />
+        <Route path="/book/id" element={<CharacterDetailPage characters={characters} setCharacters={setCharacters} />} />
+        <Route path="/stats" element={<StatsPage characters={characters} />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
