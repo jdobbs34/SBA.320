@@ -77,12 +77,21 @@ export default function CharacterListPage({ characters, setCharacters }) {
             )}
             <div>
               <h3>{character.name}</h3>
-              <p>{character.name}</p>
-              <p>{character.name}</p>
+              <p>{character.species}</p>
+              <p>{character.origin}</p>
+              <p>{character.status}</p>
               {character.rating && <p>{"⭐".repeat(character.rating)}</p>}
-              <div style={{marginTop:' 0.5rem'}} >
-                <button className="btn-primary" onClick={() => navigate(`/character/${character.id}`)}>Edit</button>
-                <button className="btn-danger" onClick={() => handleDelete(character.id)}>Delete</button>
+              <div style={{ marginTop: " 0.5rem" }}>
+                <button
+                  className="btn-primary"
+                  onClick={() => navigate(`/character/${character.id}`)}>
+                  Edit
+                </button>
+                <button
+                  className="btn-danger"
+                  onClick={() => handleDelete(character.id)}>
+                  Delete
+                </button>
               </div>
             </div>
           </div>

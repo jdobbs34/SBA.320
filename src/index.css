@@ -35,3 +35,12 @@ nav a {
 nav a:hover {
   text-decoration: underline;
 }
+
+.search-results {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: white;
+  margin-bottom: 1rem;
+  max-height: 300px;
+  overflow-y: auto;
+}
