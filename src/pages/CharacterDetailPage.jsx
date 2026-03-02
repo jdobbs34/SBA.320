@@ -60,7 +60,7 @@ export default function CharacterDetailPage({ characters, setCharacters }) {
   // Delete handler
   const handleDelete = () => {
     if (!window.confirm("Delete this character?")) return;
-    setCharacters((prev) => prev.filter((c) => c.id !== id));
+    setCharacters(prev => prev.filter(c => c.id !== id));
     navigate("/");
   };
 
