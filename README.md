@@ -22,9 +22,9 @@ Link to live site ← replace with your deployed URL
 ## Approach
 I built this app using React hooks to manage state and interact with the DOM:
 
-useState — Holds the characters array and is triggered when characters are added, edited, or deleted.
-useEffect — This is used for  Rick and Morty API search when the user types, it auto-focuses the search input on the load page, and connects to the characters array.
-useRef — Reads the input values on submit, and directly updates DOM elements on the edit page
+- useState — Holds the characters array and is triggered when characters are added, edited, or deleted.
+- useEffect — This is used for  Rick and Morty API search when the user types, it auto-focuses the search input on the load page, and connects to the characters array.
+- useRef — Reads the input values on submit, and directly updates DOM elements on the edit page
 
 The app has 4 pages connected with React Router. All character data is saved to localStorage so it continues after a page refresh.
 
