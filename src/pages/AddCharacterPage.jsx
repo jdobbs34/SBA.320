@@ -1,11 +1,13 @@
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Function and hooks
 export default function AddCharacterPage({ setCharacters }) {
   const navigate = useNavigate();
 
   const [results, setResults] = useState([]);
 
+  // useRef for all inputs
   const searchRef = useRef(null);
   const notesRef = useRef(null);
   const statusRef = useRef(null);
@@ -14,10 +16,12 @@ export default function AddCharacterPage({ setCharacters }) {
   const timerRef = useRef(null);
   const errorRef = useRef(null);
 
+  // useEffect to cous search on page load
   useEffect(() => {
     searchRef.current.focus();
   }, []);
 
+  // useEffect for Rick and Morty API seacrh
   useEffect(() => {
     const input = searchRef.current;
 
@@ -42,13 +46,15 @@ export default function AddCharacterPage({ setCharacters }) {
     input.addEventListener(`input`, handleInput);
     return () => input.removeEventListener("input", handleInput);
   }, []);
-
+  
+  // Select character handler
   const handleSelect = (character) => {
     selectedRef.current = character;
     searchRef.current.value = character.name;
     setResults([]);
   };
 
+// Save handler from refs on submit
   const handleSave = () => {
     if (!selectedRef.current) {
       errorRef.current.textContent = "Please select a character first";
@@ -63,13 +69,11 @@ export default function AddCharacterPage({ setCharacters }) {
       species: selectedRef.current.species,
       origin: selectedRef.current.origin.name,
       status: statusRef.current.value,
-      rating: selectedRef.current.value
-        ? Number(ratingRef.current.value)
-        : null,
+      rating: ratingRef.current.value ? Number(ratingRef.current.value) : null,
       notes: notesRef.current.value.trim(),
     };
 
-    setCharacters((prev) => [newCharacter, ...prev]);
+    setCharacters(prev => [newCharacter, ...prev]);
     navigate("/");
   };
 
@@ -101,6 +105,7 @@ export default function AddCharacterPage({ setCharacters }) {
         </div>
       )}
 
+      {/* Status dropdwon */}
       <div className="form-group" style={{ marginTop: "1rem" }}>
         <label>Status</label>
         <select ref={statusRef} defaultValue="want to watch">
@@ -110,9 +115,11 @@ export default function AddCharacterPage({ setCharacters }) {
         </select>
       </div>
 
+      {/* Rating dropdown */}
       <div className="form-group">
         <label>Rating</label>
         <select ref={ratingRef} defaultValue="">
+          <option value=''>No rating</option>
           <option value="1">1⭐</option>
           <option value="2">2⭐⭐</option>
           <option value="3">3⭐⭐⭐</option>
@@ -121,6 +128,7 @@ export default function AddCharacterPage({ setCharacters }) {
         </select>
       </div>
 
+      {/* Comment box */}
       <div className="form-group">
         <label>Notes</label>
         <textarea

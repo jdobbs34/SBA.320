@@ -1,12 +1,14 @@
 import { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Function and hooks
 export default function CharacterListPage({ characters, setCharacters }) {
   const navigate = useNavigate();
 
   const filterRef = useRef("all");
   const listRef = useRef(null);
 
+  // useEffect to filter when page loads
   useEffect(() => {
     if (!listRef.current) return;
     const cards = listRef.current.querySelectorAll(".character-card");
@@ -20,6 +22,7 @@ export default function CharacterListPage({ characters, setCharacters }) {
     });
   });
 
+  // Filter click handler
   const handleFilter = (value) => {
     filterRef.current = value;
     document.querySelectorAll(".filters button").forEach((btn) => {
@@ -37,9 +40,10 @@ export default function CharacterListPage({ characters, setCharacters }) {
     });
   };
 
+  // Delete handler
   const handleDelete = (id) => {
-    if (!window.confirm("Remove this character?")) return;
-    setCharacters((prev) => prev.filter((c) => c.id !== id));
+    if (!window.confirm("Delete this character?")) return;
+    setCharacters(prev => prev.filter(c => c.id !== id));
   };
 
   return (
