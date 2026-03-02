@@ -58,7 +58,7 @@ export default function AddCharacterPage({ setCharacters }) {
   const handleSave = () => {
     if (!selectedRef.current) {
       errorRef.current.textContent = "Please select a character first";
-      errorRef.current.style.display = "book";
+      errorRef.current.style.display = "character";
       return;
     }
 
@@ -91,7 +91,7 @@ export default function AddCharacterPage({ setCharacters }) {
           {results.map((character) => (
             <div
               key={character.id}
-              className="book-card"
+              className="character-card"
               style={{ cursor: "pointer" }}
               onClick={() => handleSelect(character)}>
               <img src={character.image} alt={character.name} />

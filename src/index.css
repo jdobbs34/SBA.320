@@ -6,6 +6,7 @@ html {
   height: 100%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #97CE4C ;
 }
 
 *,
@@ -16,7 +17,7 @@ html {
 
 /* Navbar */
 nav {
-  background-color: #333;
+  background-color: #02AFC5;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -26,13 +27,13 @@ nav {
   z-index: 100;
 }
 nav span {
-  color: white;
+  color: #3B1A5A;
   font-size: 1.1rem;
   font-weight: bold;
 }
 
 nav a {
-  color: white;
+  color: #3B1A5A;
   text-decoration: none;
   margin-left: 1rem;
 }
@@ -65,8 +66,8 @@ h1 {
   margin-left: 1rem;
 }
 
-.book-card {
-  background: white;
+.character-card {
+  background: #A9F3FD;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 1rem;
@@ -77,19 +78,19 @@ h1 {
   cursor: default;
 }
 
-.book-card img {
-  width: 80px;
-  height: 80px;
+.character-card img {
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   border-radius: 4px;
   flex-shrink: 0;
 }
 
-.book-card h3 {
+.character-card h3 {
   margin-bottom: 0.25rem;
 }
 
-.book-card p {
+.character-card p {
   color: #666;
   font-size: 0.9rem;
   margin-bottom: 0.2rem;
@@ -132,7 +133,7 @@ button {
 }
 
 .filters button {
-  background: white;
+  background: #A9F3FD;
   border: 1px solid #ddd;
 }
 
@@ -161,31 +162,33 @@ button {
   border-radius: 4px;
   font-size: 1rem;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: #A9F3FD;
 }
 
 /* Search results dropdown */
 .search-results {
   border: 1px solid #ddd;
   border-radius: 4px;
-  background-color: white;
+  background-color: #F0E14A;
   margin-bottom: 1rem;
   max-height: 300px;
   overflow-y: auto;
 }
 
-.search-results .book-card {
+.search-results .character-card {
   border: none;
   border-bottom: 1 solid #eee;
   border-radius: 0;
   cursor: pointer;
   margin-bottom: 0;
+  background-color: #A9F3FD;
 }
 
-.search-results .book-card:hover {
-  background-color: #f5f5f5;
+.search-results .character-card:hover {
+  background-color: #5CAD4A ;
 }
 
-.search-results .book-card:last-child {
+.search-results .character-card:last-child {
   border-bottom: none;
 }
 

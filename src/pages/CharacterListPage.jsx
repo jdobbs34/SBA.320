@@ -33,9 +33,9 @@ export default function CharacterListPage({ characters, setCharacters }) {
     cards.forEach((card) => {
       const status = card.getAttribute("data-status");
       if (value === "all" || status === value) {
-        card.style.card.style.display = "flex";
+        card.style.display = "flex";
       } else {
-        cards.style.display = "none";
+        card.style.display = "none";
       }
     });
   };
@@ -52,15 +52,13 @@ export default function CharacterListPage({ characters, setCharacters }) {
 
       <div className="filters">
         <button
-          data-value="all"
-          className="active"
-          onClick={() => handleFilter("all")}>
+          data-value="all" className="active" onClick={() => handleFilter("all")}>
           All
         </button>
-        <button data-value="favorite" onClick={() => handleFilter("favorite")}>
-          Favorite
+        <button data-value="want to watch" onClick={() => handleFilter("want to watch")}>
+          Want to watch
         </button>
-        <button className="watching" onClick={() => handleFilter("watching")}>
+        <button data-value="watching" onClick={() => handleFilter("watching")}>
           Watching
         </button>
         <button data-value="watched" onClick={() => handleFilter("watched")}>

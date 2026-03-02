@@ -51,7 +51,7 @@ export default function StatsPage({characters}) {
 
       <h2 style={{ marginBottom: '1rem' }} >Recently Added</h2>
       {characters.slice(0, 4).map(character => (
-        <div key={character.id} className="book-card" >
+        <div key={character.id} className="character-card" >
           {character.image && <img src={character.image} alt={character.name} /> }
           <div>
               <h3>{character.name}</h3>
