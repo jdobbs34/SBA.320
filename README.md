@@ -33,13 +33,16 @@ The app has 4 pages connected with React Router. All character data is saved to 
 - cd your-repo-name
 - npm install
 - npm run dev
-- Then open http://localhost:5173 in your browser.
+- Then open http://localhost:5173 in your browser
+
+## Unsolved Problems
+- No user authentication 
 
 ## Features
 - Search Rick and Morty characters by name using the Rick and Morty API
 - Save characters to a personal list
-- Filter characters by status — Want to Watch, Watching, Watched
-- Edit a character's status, rating, and notes
+- Filter characters by status — Want to watch, watching, and watched
+- Edit a characters status, rating, and notes
 - Delete characters from your list
 - View stats — total characters, watch counts, average rating
 - Data persists in localStorage after page refresh
