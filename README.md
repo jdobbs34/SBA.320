@@ -3,7 +3,6 @@
 ##  Rick and Morty Character Tracker
 https://github.com/jdobbs34/SBA.320
 
-
 ## About
 
 A React web application that lets you search for Rick and Morty characters, save them to your personal list, and track your watch status.
@@ -23,7 +22,7 @@ Link to live site = https://rickandmortycharactertracker.netlify.app/
 I built this app using React hooks to manage state and interact with the DOM:
 
 - useState — Holds the characters array and is triggered when characters are added, edited, or deleted.
-- useEffect — This is used for  Rick and Morty API search when the user types, it auto-focuses the search input on the load page, and connects to the characters array.
+- useEffect — This is used for  Rick and Morty API search. When the user types, it auto-focuses the search input on the load page and connects to the characters array.
 - useRef — Reads the input values on submit, and directly updates DOM elements on the edit page
 
 The app has 4 pages connected with React Router. All character data is saved to localStorage so it continues after a page refresh.
