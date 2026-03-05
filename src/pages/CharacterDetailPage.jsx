@@ -81,7 +81,7 @@ export default function CharacterDetailPage({ characters, setCharacters }) {
         alt="character"
       />
       <h1 ref={nameRef} />
-      <p ref={speciesRef} style={{ color: "#666", marginBlock: "0.25rem" }} />
+      <p ref={speciesRef} style={{ color: "#666", marginBottom: "1rem" }} />
 
       {/* Status dropdwon */}
       <form onSubmit={handleUpdate}>
