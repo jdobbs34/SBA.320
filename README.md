@@ -6,7 +6,7 @@ https://github.com/jdobbs34/SBA.320
 ## About
 
 A React web application that lets you search for Rick and Morty characters, save them to your personal list, and track your watch status.
-Live Site
+
 Link to live site = https://rickandmortycharactertracker.netlify.app/
 
 ## Technologies Used
