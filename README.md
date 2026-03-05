@@ -14,9 +14,10 @@ Link to live site = https://rickandmortycharactertracker.netlify.app/
 - React 
 - Vite
 - React Router DOM
+- CSS
 - Rick and Morty API (https://rickandmortyapi.com)
 - localStorage
-- CSS
+
 
 ## Approach
 I built this app using React hooks to manage state and interact with the DOM:
