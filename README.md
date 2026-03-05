@@ -42,7 +42,11 @@ The app has 4 pages connected with React Router. All character data is saved to 
 - Search Rick and Morty characters by name using the Rick and Morty API
 - Save characters to a personal list
 - Filter characters by status — Want to watch, watching, and watched
+<<<<<<< HEAD
 - Edit a character's status, rating, and notes
+=======
+- Edit a characters status, rating, and notes
+>>>>>>> a174c71eed9dcdac22217a1f64e3e52f7db62c56
 - Delete characters from your list
 - View stats — total characters, watch counts, average rating
 - Data persists in localStorage after page refresh
