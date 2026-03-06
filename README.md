@@ -29,7 +29,7 @@ I built this app using React hooks to manage state and interact with the DOM:
 The app has 4 pages connected with React Router. All character data is saved to localStorage so it continues after a page refresh.
 
 ## How to Run Locally
-- bashgit clone https://github.com/yourusername/your-repo-name
+- bashgit clone https://github.com/jdobbs34/SBA.320
 - cd your-repo-name
 - npm install
 - npm run dev
