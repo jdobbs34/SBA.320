@@ -30,7 +30,7 @@ The app has 4 pages connected with React Router. All character data is saved to 
 
 ## How to Run Locally
 - bashgit clone https://github.com/jdobbs34/SBA.320
-- cd to-repo-name
+- cd SBA.320
 - npm install
 - npm run dev
 - Then open http://localhost:5173 in your browser
